@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banana Classification By Carlos Nyambo</title>
+      <link rel= "stylesheet" type= "text/css" href="{{url_for('static',filename='bootstrap.css')}}"/>
+</head>
+<body>
+    <div class="container text-center">
+        <div class="mt-5">
+            <h2 class="text-primary text-center">Banana Classification By Carlos Nyambo</h2>
+        </div>
+        <div class="mt-5">
+            <h5 class="text-center">A Image Classification Web App That Detects the Ripeness Stage of Banana</h5>
+        </div>
+        <div class="mt-5">
+            <form class="form-inline" enctype="multipart/form-data"  method="POST" action="/predict">
+                <div class="form-group mb-2">
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                  <label class="sr-only text-danger mb-2">Please Upload an image of banana. <span class="text-primary">png, jpg</span></label>
+                  <input type="file" class="form-control" id="file" name="file" placeholder="file">
+                  <label  class="sr-only mt-3">Please upload an image file<span>Limit 200MB per file</span></label>
+                    <button type="submit" class="btn btn-primary mb-2 text-center">Predict Ripeness Stage</button>
+                </div>
+              </form>
+        </div>
+        <div class="mt-5 bg-primary" style="width: 400px; height: 200px; margin: 0 auto;">
+            <h1 style="padding-top: 70px; font-style: italic;" class="text-danger">{{prediction}}</h1>
+        </div>
+
+    </div>
+</body>
+</html>
